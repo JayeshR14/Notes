@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kodchasan&family=Vollkorn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <style>
+    .myfont {
+      font-family: 'Kodchasan', sans-serif;
+    }
+
+    .slogan {
+      font-family: 'Pacifico', cursive;
+    }
+
+    .btnfont {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .wohoo {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      column-gap: 30px;
+      row-gap: 50px;
+    }
+
+    @media (max-width:800px) {
+      .wohoo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (min-width:801px) {
+      .wohoo {
+        display: flex;
+        justify-content: center;
+        margin-left: 20px;
+        flex-wrap: wrap;
+      }
+    }
+
+    .savei,
+    .editi,
+    .deli {
+      transition: 1s;
+    }
+
+    .savei:hover {
+      rotate: 180deg;
+    }
+
+    .editi:hover {
+      rotate: 180deg;
+    }
+
+    .deli:hover {
+      rotate: 180deg;
+    }
+
+    @media (min-width:1240px) {
+      .wohoo {
+        display: flex;
+        justify-content: center;
+        margin-left: 20px;
+        flex-wrap: wrap;
+      }
+    }
+
+    .save,
+    .edit,
+    .delete {
+      opacity: 0;
+    }
+
+    .savei:hover .save,
+    .editi:hover .edit,
+    .deli:hover .delete {
+      opacity: 1;
+    }
+
+    .btnfont:hover {
+      letter-spacing: 2px;
+    }
+
+    .btnfont {
+      transition: 0.2s;
+    }
+  </style>
+</head>
+
+<body class="bg-black">
+  <nav class="flex h-24 min-w-full">
+    <div class=" flex-1 "></div>
+    <div class=" flex flex-1 justify-center items-center">
+      <div class="mt-1 flex-shrink-0"><img src="letter.png" style="height:60px;width:60px;"></div>
+      <div class="myfont mt-1 text-5xl text-orange-50 ml-4">
+        <p>Notes</p>
+      </div>
+    </div>
+    <div class=" flex-1 "></div>
+  </nav>
+
+  <div class="flex justify-center items-center h-10 ">
+    <div>
+      <p class="slogan  sm:text-[21px] md:text-[30px] text-slate-300">" <span CLASS="text-red-500">W</span>hen <span
+          CLASS="text-red-500">Y</span>our <span CLASS="text-red-500">H</span>eart <span
+          CLASS="text-red-500">S</span>peaks, <span CLASS="text-red-500">T</span>ake <span
+          CLASS="text-red-500">G</span>ood <span CLASS="text-red-500">N</span>otes "</p>
+    </div>
+  </div>
+  <div class="mt-5 h-9 max-w-full flex justify-center items-center">
+    <button id="showNote"
+      class="btnfont text-[17px] bg-red-500 hover:w-[170px]  tracking-[1px] rounded-[20px] text-slate-100 font-bold h-9 w-32">Add
+      Notes</button>
+  </div>
+
+  <div id="addClass"
+    class="z-10 hidden h-full justify-center items-center w-full top-[0px] bg-opacity-90 absolute bg-black">
+    <div id="addClass" class=" h-full flex justify-center items-center w-full top-[0px] bg-opacity-90 absolute">
+      <div class="h-[400px] w-96 rounded-[10px] border-t-[10px] border-b-[10px] border-red-500 bg-gray-200">
+        <div class="h-[50px] bg-blue-400 flex justify-end items-center">
+          <input id="due" class="btnfont bg-transparent h-[40px] mr-3 outline-none w-[200px] p-[20px] rounded-[20px] "
+            type="date">
+        </div>
+        <div class="h-[280px]">
+          <textarea id="textNote"
+            class="bg-45 btnfont h-full w-full  outline-none p-[11px] text-[22px] resize-none"></textarea>
+        </div>
+        <div class="h-[50px]">
+          <button class="h-full w-full text- text-[22px] bg-blue-400 font-semibold" id="noteSubmit">Add Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="mainList" class="wohoo">
+
+  </div>
+
+  <script src="notes.js"></script>
+</body>
+
+</html>
